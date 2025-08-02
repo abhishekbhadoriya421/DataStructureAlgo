@@ -1,0 +1,41 @@
+import math
+import random
+
+class Array:
+    def __init__(self, num):
+        self.num = num
+    
+    def squareRootOfNumber(self):
+        s = 1
+        e = self.num
+        while(s<=e):
+            mid = s+(e-s)//2
+            root = mid * mid
+            if (root == self.num):
+                return mid
+            elif (root > self.num):
+                e = mid -1
+            else:
+                s = mid +1
+            # check for next value roo 
+            root2 =(mid+1) * (mid+1)
+            if(root < self.num and root2 >  self.num):
+                return mid
+        return -1
+
+
+# ✅ Generate and test 1000 random test cases
+all_passed = True
+for _ in range(100000):
+    n = random.randint(1, 20**6)  # random numbers between 1 and 1,000,000
+    obj = Array(n)
+    expected = int(math.sqrt(n))  # floor square root using Python's math
+    result = obj.squareRootOfNumber()
+
+    if result != expected:
+        print(f"❌ Failed for {n}: expected {expected}, got {result}")
+        all_passed = False
+        break
+
+if all_passed:
+    print("✅ All 1000 test cases passed successfully!")
