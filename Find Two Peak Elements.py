@@ -32,6 +32,22 @@ class Array:
         if leftPeek != -1:
             result.append(leftPeek)
         return result
+    
+    def findAllPeekElement(self):
+        previous = float('-inf')
+        current  = self.arr[0]
+        result = []
+        next = self.arr[1] if self.size > 1 else -1
+        if previous < current > next : result.append(0)
+        else:
+            previous = self.arr[0]
+            for i in range(1,self.size):
+                current = self.arr[i]
+                next = self.arr[i+1] if i+1 < self.size else float('-inf')
+                if previous < current > next:
+                    result.append(i)
+                previous = current
+        return result
         
         
 
@@ -39,5 +55,5 @@ class Array:
 # nums = [1, 2, 1, 3, 5, 4, 6]
 nums = [1, 2, 1, 3, 5, 4, 6,7,8]
 obj = Array(nums, len(nums))
-print(obj.findPeekTwoElementOptimize())
+print(obj.findAllPeekElement())
 
