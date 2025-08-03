@@ -36,9 +36,25 @@ class Array:
             previousIndex = i
         return -1
     
+    def findPeekElementOptimizeForce(self):
+        s = 0
+        e = self.size - 1
+        while(s <= e):
+            mid = s + (e-s) // 2
+            current = self.arr[mid]
+            previous = self.arr[mid-1] if mid-1 >= s else -(10**100)
+            next = self.arr[mid+1] if mid+1 <= e else -(10**100)
+            if previous < current > next:
+                return mid
+            elif current < next:
+                s = mid + 1
+            else:
+                e = mid - 1
+        return -1
+    
 
 
-nums = [-2147483648,-2147483647]
+nums = [1,2,1,3,5,4,6]
 object = Array(nums,len(nums))
 
-print(object.findPeakElementTest(nums)) 
+print(object.findPeekElementOptimizeForce()) 
