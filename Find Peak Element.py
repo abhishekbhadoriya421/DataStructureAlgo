@@ -51,10 +51,26 @@ class Array:
             else:
                 e = mid - 1
         return -1
+
+    def findPeakElementOptimized(self):
+        s, e = 0, self.size - 1
+        while s < e:
+            mid = s + (e - s) // 2
+            if self.arr[mid] < self.arr[mid + 1]:
+                s = mid + 1
+            else:
+                e = mid
+        return s  
+
+
+nums = [1, 2, 1, 3, 5, 4, 6]
+obj = Array(nums, len(nums))
+print(obj.findPeakElementOptimized())
+
     
 
 
-nums = [1,2,1,3,5,4,6]
-object = Array(nums,len(nums))
+# nums = [1,2,1,3,5,4,6]
+# object = Array(nums,len(nums))
 
-print(object.findPeekElementOptimizeForce()) 
+# print(object.findPeekElementOptimizeForce()) 
