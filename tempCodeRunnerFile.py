@@ -1,4 +1,2 @@
-nums = [1,2,1,3,5,4,6]
-# object = Array(nums,len(nums))
 
-# print(object.findPeekElementOptimizeForce()) 
+# arr = [0,1,2,2,1]
