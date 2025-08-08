@@ -25,7 +25,23 @@ def kokoEatBanana(arr,hours):
         
     return answer
 
-
+def kokoEatBananaOptimize(arr,hours):
+    possibleIteration = sum(arr)
+    startIteration = max(arr)
+    answer = startIteration
+    start = 1
+    end = startIteration
+    while start <= end:
+        mid = start + (end - start) // 2
+        isPos = isPossibleAnswer(arr,hours,len(arr),mid)
+        if isPos == True:
+            end = mid -1
+            answer = mid
+        else:
+            start = mid +1
+        
+    return answer
+    
 # piles = [3,6,7,11]
 # h = 8
 
