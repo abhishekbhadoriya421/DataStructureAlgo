@@ -26,6 +26,8 @@ def printNumbers(num):
 	print(num)
 
 
+# https://www.geeksforgeeks.org/problems/missing-number-in-array1416/1?page=1&difficulty=Basic,Easy&sortBy=submissions
+
 
 printNumbers(5)
 # print(findTargetOptimize([1,2,3,4,5,6,7],0,1))
