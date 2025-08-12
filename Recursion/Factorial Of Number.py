@@ -5,3 +5,6 @@ def findFactorial(num):
 	return num * findFactorial(num-1)
 
 print(findFactorial(2))
+
+
+
