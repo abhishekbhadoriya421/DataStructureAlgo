@@ -26,8 +26,27 @@ def checkPali(str):
 
 
 
+def optimizeApproachHelper(str,s,e):
+	if s >= e:
+		return True
+
+	if(str[s] != str[e]):
+		return False
+
+	return optimizeApproachHelper(str,s+1,e-1)
+
+
+def checkPaliOpt(str):
+	str = str.lower()
+	removeChar = ""
+	for item in range(0,len(str)):
+		if((ord(str[item]) >= 97 and ord(str[item]) <=122) or (ord(str[item]) >= 48 and ord(str[item]) <=57)):
+			 removeChar = removeChar+str[item]
+	return optimizeApproachHelper(removeChar,0,len(removeChar)-1)
+	
+
 
 # str = "A man, a plan, a canal: Panamam"
-str = "8V8K;G;K;V;"
+str = "AMaaMMA;"
 # 8V8KGKV
-print(checkPali(str))
+print(checkPaliOpt(str))
