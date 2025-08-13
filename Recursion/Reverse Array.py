@@ -10,7 +10,7 @@ def reverseAnArrayBruteForce(arr,index):
 	return arr
 
 
-def bestReverseArray(arr,s,e):
+def optimizedReverseArray(arr,s,e):
 	if(s>=e):
 		return arr
 
@@ -19,4 +19,11 @@ def bestReverseArray(arr,s,e):
 	arr[e] = temp
 	return bestReverseArray (arr,s+1,e-1)
 
-print(bestReverseArray([1,2,3,4,5,6,7,8,9],0,len([1,2,3,4,5,6,7,8,9])-1))
+def bestReverseArray(arr,index):
+	if(i>=(n/2)):
+		return arr
+
+	temp = arr[len()]
+	arr[s] = arr[e]
+	arr[e] = temp
+print(bestReverseArray([1,2,3,4,5,6,7,8,9],0))
