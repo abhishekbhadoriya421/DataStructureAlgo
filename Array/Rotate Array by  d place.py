@@ -35,11 +35,30 @@ def rotateArrayByDPlaceBetter(array, k):
             array[i] = temp[j]
             i+=1 
             j+=1
+            
+
+def rotateArray(array,s,e):
+    if(s>e):
+        return
+    temp = array[s]
+    array[s] = array[e]
+    array[e] = temp
+    rotateArray(array,s+1,e-1)  
+    
+          
+def rotateArrayByDPlaceBest(array,k):
+    if len(array)<k:
+        k = k % len(array)
+    rotateArray(array,0,k-1)
+    rotateArray(array,k,len(array)-1)
+    rotateArray(array,0,len(array)-1)
+    
+    
     
 
-array = [1,2,3,4,5]
+# array = [1,2,3,4,5]
 # array = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
-# array = [7, 3, 9, 1]
-k = 2
+array = [7, 3, 9, 1]
+k = 9
 rotateArrayByDPlaceBetter(array,k)
 print(array)
