@@ -1,4 +1,4 @@
-def rotateArrayByOne(self, nums):
+def rotateArrayByOne (nums):
         first = nums[0]
         i = 0
         j = i+1
