@@ -6,7 +6,21 @@ def bruteForceFindTwoSum(array,target):
     return [-1,-1]
 
 
+def betterAproach(array,target):
+    array.sort()
+    s = 0
+    e = len(array) -1
+    while(s < e):
+        sum = array[s] + array[e]
+        if(sum == target):
+            return True
+        elif(sum > target):
+            e=-1
+        else:
+            s+=1
+    return False
 
-nums = [2,7,11,15]
-target = 9
-print(bruteForceFindTwoSum(nums,target))
+nums = [3,2,4]
+target = 6
+
+print(betterAproach(nums,target))
