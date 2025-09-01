@@ -20,7 +20,18 @@ def betterAproach(array,target):
             s+=1
     return False
 
-nums = [3,2,4]
-target = 6
 
-print(betterAproach(nums,target))
+def optimizedApproach(array,target):
+    my_map = {}
+    for i in range(0,len(array)):
+        requiredElement = target - array[i]
+        if requiredElement in my_map:
+            return [my_map[requiredElement],i]
+        else:
+            my_map[array[i]] = i
+    return [-1,-1]
+
+nums = [2,7,11,15]
+target = 9
+
+print(optimizedApproach(nums,target))
