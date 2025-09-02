@@ -41,6 +41,23 @@ def better(array):
         i+=1
     print(array)
     
-nums = [2,0,2,1,1,0]
-# nums = [2,0,1]
-bruteForce(nums)
+
+def optimize(array):
+    low = 0
+    mid = 0
+    high = len(array)-1
+    while(low<=high and mid<=high):
+        if(array[mid]==0):
+            array[low],array[mid] = array[mid],array[low]
+            low+=1
+            mid+=1
+        elif(array[mid]==1):
+            mid+=1
+        else:
+            array[high],array[mid] = array[mid],array[high]
+            high-=1
+    print(array)
+    
+# nums = [2,0,2,1,1,0]
+nums = [2,0,1]
+optimize(nums)
