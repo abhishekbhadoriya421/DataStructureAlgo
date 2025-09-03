@@ -35,6 +35,21 @@ def findMajorityElementBest2ForBetterTimeComplexity(array):
         if value >=   ((len(array) // 2 ) + 1 ):
             return key
     return -1
+
+# Boyer-Moore Majority Voting Algorithm
+def optimizedApproch(array):
+    
+    vote = 1
+    candidate = array[0]
+    for i in range(1,len(array)):
+        if vote == 0:
+            candidate = array[i]
+        if array[i] == candidate:
+            vote+=1
+        else:
+            vote-=1
+    return candidate
+        
         
 
 arr = [2,2,1,1,1,2,2]
